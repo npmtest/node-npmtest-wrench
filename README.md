@@ -1,7 +1,10 @@
-# test coverage for  [wrench (v1.5.9)](https://github.com/ryanmcgrath/wrench-js#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-wrench.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-wrench) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-wrench.svg)](https://travis-ci.org/npmtest/node-npmtest-wrench)
+# npmtest-wrench
+
+#### test coverage for  [wrench (v1.5.9)](https://github.com/ryanmcgrath/wrench-js#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-wrench.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-wrench) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-wrench.svg)](https://travis-ci.org/npmtest/node-npmtest-wrench)
+
 #### Recursive filesystem (and other) operations that Node *should* have.
 
-[![NPM](https://nodei.co/npm/wrench.png?downloads=true)](https://www.npmjs.com/package/wrench)
+[![NPM](https://nodei.co/npm/wrench.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/wrench)
 
 | git-branch : | [alpha](https://github.com/npmtest/node-npmtest-wrench/tree/alpha)|
 |--:|:--|
@@ -9,11 +12,17 @@
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-wrench/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-wrench/build/test-report.html)|
 | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-wrench/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-wrench/tree/gh-pages/build)|
 
-[![istanbul-coverage](https://npmtest.github.io/node-npmtest-wrench/build/screenCapture.buildCustomOrg.browser.coverage.html.png)](https://npmtest.github.io/node-npmtest-wrench/build/coverage.html/index.html)
+- [https://npmtest.github.io/node-npmtest-wrench/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-wrench/build/coverage.html/index.html)
 
-[![test-report](https://npmtest.github.io/node-npmtest-wrench/build/screenCapture.buildCustomOrg.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmtest%252Fnode-npmtest-wrench%252Ftmp%252Fbuild%252Ftest-report.html.png)](https://npmtest.github.io/node-npmtest-wrench/build/test-report.html)
+[![istanbul-coverage](https://npmtest.github.io/node-npmtest-wrench/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fcoverage.lib.html.png)](https://npmtest.github.io/node-npmtest-wrench/build/coverage.html/index.html)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-wrench/build/screenCapture.buildApidoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmdoc%252Fnode-npmdoc-wrench%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-wrench/build/apidoc.html)
+- [https://npmtest.github.io/node-npmtest-wrench/build/test-report.html](https://npmtest.github.io/node-npmtest-wrench/build/test-report.html)
+
+[![test-report](https://npmtest.github.io/node-npmtest-wrench/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Ftest-report.html.png)](https://npmtest.github.io/node-npmtest-wrench/build/test-report.html)
+
+- [https://npmdoc.github.io/node-npmdoc-wrench/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-wrench/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-wrench/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-wrench/build/apidoc.html)
 
 ![npmPackageListing](https://npmtest.github.io/node-npmtest-wrench/build/screenCapture.npmPackageListing.svg)
 
@@ -27,8 +36,7 @@
 
 {
     "author": {
-        "name": "Ryan McGrath",
-        "email": "ryan@venodesigns.net"
+        "name": "Ryan McGrath"
     },
     "bugs": {
         "url": "http://github.com/ryanmcgrath/wrench-js/issues"
@@ -60,13 +68,11 @@
     "main": "./lib/wrench",
     "maintainers": [
         {
-            "name": "ryanmcgrath",
-            "email": "ryan@venodesigns.net"
+            "name": "ryanmcgrath"
         }
     ],
     "name": "wrench",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://ryanmcgrath@github.com/ryanmcgrath/wrench-js.git"
