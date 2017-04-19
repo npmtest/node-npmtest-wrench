@@ -1,5 +1,7 @@
-<html lang="en"><head>
-    <title>Code coverage report for node-npmtest-wrench/wrench/lib/wrench.js</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for node-npmtest-wrench/node_modules/wrench/lib/wrench.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,7 +194,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-wrench">npmtest-wrench (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-wrench/wrench/lib/wrench.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-wrench/node_modules/wrench/lib/wrench.js</span></h1>
     <h2>
         
         Statements: <span class="metric">6.43% <small>(16 / 249)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-wrench/wrench/lib/</a> » wrench.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-wrench/node_modules/wrench/lib/</a> &#187; wrench.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -1298,39 +1300,39 @@ var fs = require("fs"),
  *  Recursively dives through directories and read the contents of all the
  *  children directories.
  */
-exports.readdirSyncRecursive = <span class="fstat-no" title="function not covered">function(baseDir) {</span>
-<span class="cstat-no" title="statement not covered">    baseDir = baseDir.replace(/\/$/, '');</span>
+exports.readdirSyncRecursive = <span class="fstat-no" title="function not covered" >function(baseDir) {</span>
+<span class="cstat-no" title="statement not covered" >    baseDir = baseDir.replace(/\/$/, '');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    var readdirSyncRecursive = <span class="fstat-no" title="function not covered">function(baseDir) {</span></span>
-<span class="cstat-no" title="statement not covered">        var files = [],</span>
+<span class="cstat-no" title="statement not covered" >    var readdirSyncRecursive = <span class="fstat-no" title="function not covered" >function(baseDir) {</span></span>
+<span class="cstat-no" title="statement not covered" >        var files = [],</span>
             curFiles,
             nextDirs,
-            isDir = <span class="fstat-no" title="function not covered">function(fname){</span>
-<span class="cstat-no" title="statement not covered">                return fs.existsSync(_path.join(baseDir, fname)) ? fs.statSync( _path.join(baseDir, fname) ).isDirectory() : false;</span>
+            isDir = <span class="fstat-no" title="function not covered" >function(fname){</span>
+<span class="cstat-no" title="statement not covered" >                return fs.existsSync(_path.join(baseDir, fname)) ? fs.statSync( _path.join(baseDir, fname) ).isDirectory() : false;</span>
             },
-            prependBaseDir = <span class="fstat-no" title="function not covered">function(fname){</span>
-<span class="cstat-no" title="statement not covered">                return _path.join(baseDir, fname);</span>
+            prependBaseDir = <span class="fstat-no" title="function not covered" >function(fname){</span>
+<span class="cstat-no" title="statement not covered" >                return _path.join(baseDir, fname);</span>
             };
 &nbsp;
-<span class="cstat-no" title="statement not covered">        curFiles = fs.readdirSync(baseDir);</span>
-<span class="cstat-no" title="statement not covered">        nextDirs = curFiles.filter(isDir);</span>
-<span class="cstat-no" title="statement not covered">        curFiles = curFiles.map(prependBaseDir);</span>
+<span class="cstat-no" title="statement not covered" >        curFiles = fs.readdirSync(baseDir);</span>
+<span class="cstat-no" title="statement not covered" >        nextDirs = curFiles.filter(isDir);</span>
+<span class="cstat-no" title="statement not covered" >        curFiles = curFiles.map(prependBaseDir);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        files = files.concat( curFiles );</span>
+<span class="cstat-no" title="statement not covered" >        files = files.concat( curFiles );</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        while (nextDirs.length) {</span>
-<span class="cstat-no" title="statement not covered">            files = files.concat( readdirSyncRecursive( _path.join(baseDir, nextDirs.shift()) ) );</span>
+<span class="cstat-no" title="statement not covered" >        while (nextDirs.length) {</span>
+<span class="cstat-no" title="statement not covered" >            files = files.concat( readdirSyncRecursive( _path.join(baseDir, nextDirs.shift()) ) );</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        return files;</span>
+<span class="cstat-no" title="statement not covered" >        return files;</span>
     };
 &nbsp;
     // convert absolute paths to relative
-<span class="cstat-no" title="statement not covered">    var fileList = readdirSyncRecursive(baseDir).map(<span class="fstat-no" title="function not covered">function(val){</span></span>
-<span class="cstat-no" title="statement not covered">        return _path.relative(baseDir, val);</span>
+<span class="cstat-no" title="statement not covered" >    var fileList = readdirSyncRecursive(baseDir).map(<span class="fstat-no" title="function not covered" >function(val){</span></span>
+<span class="cstat-no" title="statement not covered" >        return _path.relative(baseDir, val);</span>
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered">    return fileList;</span>
+<span class="cstat-no" title="statement not covered" >    return fileList;</span>
 };
 &nbsp;
 /*  wrench.readdirRecursive("directory_path", function(error, files) {});
@@ -1343,58 +1345,58 @@ exports.readdirSyncRecursive = <span class="fstat-no" title="function not covere
  *  When no more directories are left, callback is called with null for all arguments.
  *
  */
-exports.readdirRecursive = <span class="fstat-no" title="function not covered">function(baseDir, fn) {</span>
-<span class="cstat-no" title="statement not covered">    baseDir = baseDir.replace(/\/$/, '');</span>
+exports.readdirRecursive = <span class="fstat-no" title="function not covered" >function(baseDir, fn) {</span>
+<span class="cstat-no" title="statement not covered" >    baseDir = baseDir.replace(/\/$/, '');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    var waitCount = 0;</span>
+<span class="cstat-no" title="statement not covered" >    var waitCount = 0;</span>
 &nbsp;
-<span class="fstat-no" title="function not covered">    function readdirRecursive(curDir) {</span>
-<span class="cstat-no" title="statement not covered">        var prependcurDir = <span class="fstat-no" title="function not covered">function(fname){</span></span>
-<span class="cstat-no" title="statement not covered">            return _path.join(curDir, fname);</span>
+<span class="fstat-no" title="function not covered" >    function readdirRecursive(curDir) {</span>
+<span class="cstat-no" title="statement not covered" >        var prependcurDir = <span class="fstat-no" title="function not covered" >function(fname){</span></span>
+<span class="cstat-no" title="statement not covered" >            return _path.join(curDir, fname);</span>
         };
 &nbsp;
-<span class="cstat-no" title="statement not covered">        waitCount++;</span>
-<span class="cstat-no" title="statement not covered">        fs.readdir(curDir, <span class="fstat-no" title="function not covered">function(e, curFiles) {</span></span>
-<span class="cstat-no" title="statement not covered">            if (e) {</span>
-<span class="cstat-no" title="statement not covered">                fn(e);</span>
-<span class="cstat-no" title="statement not covered">                return;</span>
+<span class="cstat-no" title="statement not covered" >        waitCount++;</span>
+<span class="cstat-no" title="statement not covered" >        fs.readdir(curDir, <span class="fstat-no" title="function not covered" >function(e, curFiles) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (e) {</span>
+<span class="cstat-no" title="statement not covered" >                fn(e);</span>
+<span class="cstat-no" title="statement not covered" >                return;</span>
             }
-<span class="cstat-no" title="statement not covered">            waitCount--;</span>
+<span class="cstat-no" title="statement not covered" >            waitCount--;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            curFiles = curFiles.map(prependcurDir);</span>
+<span class="cstat-no" title="statement not covered" >            curFiles = curFiles.map(prependcurDir);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            curFiles.forEach(<span class="fstat-no" title="function not covered">function(it) {</span></span>
-<span class="cstat-no" title="statement not covered">                waitCount++;</span>
+<span class="cstat-no" title="statement not covered" >            curFiles.forEach(<span class="fstat-no" title="function not covered" >function(it) {</span></span>
+<span class="cstat-no" title="statement not covered" >                waitCount++;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">                fs.stat(it, <span class="fstat-no" title="function not covered">function(e, stat) {</span></span>
-<span class="cstat-no" title="statement not covered">                    waitCount--;</span>
+<span class="cstat-no" title="statement not covered" >                fs.stat(it, <span class="fstat-no" title="function not covered" >function(e, stat) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    waitCount--;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">                    if (e) {</span>
-<span class="cstat-no" title="statement not covered">                        fn(e);</span>
+<span class="cstat-no" title="statement not covered" >                    if (e) {</span>
+<span class="cstat-no" title="statement not covered" >                        fn(e);</span>
                     } else {
-<span class="cstat-no" title="statement not covered">                        if (stat.isDirectory()) {</span>
-<span class="cstat-no" title="statement not covered">                            readdirRecursive(it);</span>
+<span class="cstat-no" title="statement not covered" >                        if (stat.isDirectory()) {</span>
+<span class="cstat-no" title="statement not covered" >                            readdirRecursive(it);</span>
                         }
                     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">                    if (waitCount == 0) {</span>
-<span class="cstat-no" title="statement not covered">                        fn(null, null);</span>
+<span class="cstat-no" title="statement not covered" >                    if (waitCount == 0) {</span>
+<span class="cstat-no" title="statement not covered" >                        fn(null, null);</span>
                     }
                 });
             });
 &nbsp;
-<span class="cstat-no" title="statement not covered">            fn(null, curFiles.map(<span class="fstat-no" title="function not covered">function(val) {</span></span>
+<span class="cstat-no" title="statement not covered" >            fn(null, curFiles.map(<span class="fstat-no" title="function not covered" >function(val) {</span></span>
                 // convert absolute paths to relative
-<span class="cstat-no" title="statement not covered">                return _path.relative(baseDir, val);</span>
+<span class="cstat-no" title="statement not covered" >                return _path.relative(baseDir, val);</span>
             }));
 &nbsp;
-<span class="cstat-no" title="statement not covered">            if (waitCount == 0) {</span>
-<span class="cstat-no" title="statement not covered">                fn(null, null);</span>
+<span class="cstat-no" title="statement not covered" >            if (waitCount == 0) {</span>
+<span class="cstat-no" title="statement not covered" >                fn(null, null);</span>
             }
         });
     };
 &nbsp;
-<span class="cstat-no" title="statement not covered">    readdirRecursive(baseDir);</span>
+<span class="cstat-no" title="statement not covered" >    readdirRecursive(baseDir);</span>
 };
 &nbsp;
 &nbsp;
@@ -1407,94 +1409,94 @@ exports.readdirRecursive = <span class="fstat-no" title="function not covered">f
  *  Sync-function, which blocks things until it's done. No idea why anybody would want an
  *  Asynchronous version. :\
  */
-exports.rmdirSyncRecursive = <span class="fstat-no" title="function not covered">function(path, failSilent) {</span>
-<span class="cstat-no" title="statement not covered">    var files;</span>
+exports.rmdirSyncRecursive = <span class="fstat-no" title="function not covered" >function(path, failSilent) {</span>
+<span class="cstat-no" title="statement not covered" >    var files;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    try {</span>
-<span class="cstat-no" title="statement not covered">        files = fs.readdirSync(path);</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >        files = fs.readdirSync(path);</span>
     } catch (err) {
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if(failSilent) <span class="cstat-no" title="statement not covered">return;</span></span>
-<span class="cstat-no" title="statement not covered">        throw new Error(err.message);</span>
+<span class="cstat-no" title="statement not covered" >        if(failSilent) <span class="cstat-no" title="statement not covered" >return;</span></span>
+<span class="cstat-no" title="statement not covered" >        throw new Error(err.message);</span>
     }
 &nbsp;
     /*  Loop through and delete everything in the sub-tree after checking it */
-<span class="cstat-no" title="statement not covered">    for(var i = 0; i &lt; files.length; i++) {</span>
-<span class="cstat-no" title="statement not covered">        var file = _path.join(path, files[i]);</span>
-<span class="cstat-no" title="statement not covered">        var currFile = fs.lstatSync(file);</span>
+<span class="cstat-no" title="statement not covered" >    for(var i = 0; i &lt; files.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >        var file = _path.join(path, files[i]);</span>
+<span class="cstat-no" title="statement not covered" >        var currFile = fs.lstatSync(file);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if(currFile.isDirectory())  {</span>
+<span class="cstat-no" title="statement not covered" >        if(currFile.isDirectory())  {</span>
             // Recursive function back to the beginning
-<span class="cstat-no" title="statement not covered">            exports.rmdirSyncRecursive(file);</span>
-        } else <span class="cstat-no" title="statement not covered">if(currFile.isSymbolicLink()) {</span>
+<span class="cstat-no" title="statement not covered" >            exports.rmdirSyncRecursive(file);</span>
+        } else <span class="cstat-no" title="statement not covered" >if(currFile.isSymbolicLink()) {</span>
             // Unlink symlinks
-<span class="cstat-no" title="statement not covered">            if (isWindows) {</span>
-<span class="cstat-no" title="statement not covered">                fs.chmodSync(file, 666) </span>// Windows needs this unless joyent/node#3006 is resolved..
+<span class="cstat-no" title="statement not covered" >            if (isWindows) {</span>
+<span class="cstat-no" title="statement not covered" >                fs.chmodSync(file, 666) </span>// Windows needs this unless joyent/node#3006 is resolved..
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            fs.unlinkSync(file);</span>
+<span class="cstat-no" title="statement not covered" >            fs.unlinkSync(file);</span>
         } else {
             // Assume it's a file - perhaps a try/catch belongs here?
-<span class="cstat-no" title="statement not covered">            if (isWindows) {</span>
-<span class="cstat-no" title="statement not covered">                fs.chmodSync(file, 666) </span>// Windows needs this unless joyent/node#3006 is resolved..
+<span class="cstat-no" title="statement not covered" >            if (isWindows) {</span>
+<span class="cstat-no" title="statement not covered" >                fs.chmodSync(file, 666) </span>// Windows needs this unless joyent/node#3006 is resolved..
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            fs.unlinkSync(file);</span>
+<span class="cstat-no" title="statement not covered" >            fs.unlinkSync(file);</span>
         }
     }
 &nbsp;
     /*  Now that we know everything in the sub-tree has been deleted, we can delete the main
      directory. Huzzah for the shopkeep. */
-<span class="cstat-no" title="statement not covered">    return fs.rmdirSync(path);</span>
+<span class="cstat-no" title="statement not covered" >    return fs.rmdirSync(path);</span>
 };
 &nbsp;
 &nbsp;
 &nbsp;
-<span class="fstat-no" title="function not covered">function isFileIncluded(opts, dir, filename) {</span>
+<span class="fstat-no" title="function not covered" >function isFileIncluded(opts, dir, filename) {</span>
 &nbsp;
-<span class="fstat-no" title="function not covered">    function isMatch(filter) {</span>
-<span class="cstat-no" title="statement not covered">        if (typeof filter === 'function') {</span>
-<span class="cstat-no" title="statement not covered">            return filter(filename, dir) === true;</span>
+<span class="fstat-no" title="function not covered" >    function isMatch(filter) {</span>
+<span class="cstat-no" title="statement not covered" >        if (typeof filter === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >            return filter(filename, dir) === true;</span>
         }
         else {
             // Maintain backwards compatibility and use just the filename
-<span class="cstat-no" title="statement not covered">            return filename.match(filter);</span>
+<span class="cstat-no" title="statement not covered" >            return filename.match(filter);</span>
         }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (opts.include || opts.exclude) {</span>
-<span class="cstat-no" title="statement not covered">        if (opts.exclude) {</span>
-<span class="cstat-no" title="statement not covered">            if (isMatch(opts.exclude)) {</span>
-<span class="cstat-no" title="statement not covered">                return false;</span>
+<span class="cstat-no" title="statement not covered" >    if (opts.include || opts.exclude) {</span>
+<span class="cstat-no" title="statement not covered" >        if (opts.exclude) {</span>
+<span class="cstat-no" title="statement not covered" >            if (isMatch(opts.exclude)) {</span>
+<span class="cstat-no" title="statement not covered" >                return false;</span>
             }
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if (opts.include) {</span>
-<span class="cstat-no" title="statement not covered">            if (isMatch(opts.include)) {</span>
-<span class="cstat-no" title="statement not covered">                return true;</span>
+<span class="cstat-no" title="statement not covered" >        if (opts.include) {</span>
+<span class="cstat-no" title="statement not covered" >            if (isMatch(opts.include)) {</span>
+<span class="cstat-no" title="statement not covered" >                return true;</span>
             }
             else  {
-<span class="cstat-no" title="statement not covered">                return false;</span>
+<span class="cstat-no" title="statement not covered" >                return false;</span>
             }
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        return true;</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
     }
-    else <span class="cstat-no" title="statement not covered">if (opts.filter) {</span>
-<span class="cstat-no" title="statement not covered">        var filter = opts.filter;</span>
+    else <span class="cstat-no" title="statement not covered" >if (opts.filter) {</span>
+<span class="cstat-no" title="statement not covered" >        var filter = opts.filter;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if (!opts.whitelist) {</span>
+<span class="cstat-no" title="statement not covered" >        if (!opts.whitelist) {</span>
             // if !opts.whitelist is false every file or directory 
             // which does match opts.filter will be ignored
-<span class="cstat-no" title="statement not covered">            return isMatch(filter) ? false : true;</span>
+<span class="cstat-no" title="statement not covered" >            return isMatch(filter) ? false : true;</span>
         } else {
             // if opts.whitelist is true every file or directory 
             // which doesn't match opts.filter will be ignored
-<span class="cstat-no" title="statement not covered">            return !isMatch(filter) ? false : true;</span>
+<span class="cstat-no" title="statement not covered" >            return !isMatch(filter) ? false : true;</span>
         }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    return true;</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
 }
 &nbsp;
 /*  wrench.copyDirSyncRecursive("directory_to_copy", "new_directory_location", opts);
@@ -1505,81 +1507,81 @@ exports.rmdirSyncRecursive = <span class="fstat-no" title="function not covered"
  *
  *  Note: Directories should be passed to this function without a trailing slash.
  */
-exports.copyDirSyncRecursive = <span class="fstat-no" title="function not covered">function(sourceDir, newDirLocation, opts) {</span>
-<span class="cstat-no" title="statement not covered">    opts = opts || {};</span>
+exports.copyDirSyncRecursive = <span class="fstat-no" title="function not covered" >function(sourceDir, newDirLocation, opts) {</span>
+<span class="cstat-no" title="statement not covered" >    opts = opts || {};</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    try {</span>
-<span class="cstat-no" title="statement not covered">        if(fs.statSync(newDirLocation).isDirectory()) { </span>
-<span class="cstat-no" title="statement not covered">            if(opts.forceDelete) {</span>
-<span class="cstat-no" title="statement not covered">            exports.rmdirSyncRecursive(newDirLocation);</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >        if(fs.statSync(newDirLocation).isDirectory()) { </span>
+<span class="cstat-no" title="statement not covered" >            if(opts.forceDelete) {</span>
+<span class="cstat-no" title="statement not covered" >            exports.rmdirSyncRecursive(newDirLocation);</span>
             } else {
-<span class="cstat-no" title="statement not covered">                return new Error('You are trying to delete a directory that already exists. Specify forceDelete in the opts argument to override this. Bailing~');</span>
+<span class="cstat-no" title="statement not covered" >                return new Error('You are trying to delete a directory that already exists. Specify forceDelete in the opts argument to override this. Bailing~');</span>
             }
         }
     } catch(e) { }
 &nbsp;
     /*  Create the directory where all our junk is moving to; read the mode of the source directory and mirror it */
-<span class="cstat-no" title="statement not covered">    var checkDir = fs.statSync(sourceDir);</span>
-<span class="cstat-no" title="statement not covered">    try {</span>
-<span class="cstat-no" title="statement not covered">        fs.mkdirSync(newDirLocation, checkDir.mode);</span>
+<span class="cstat-no" title="statement not covered" >    var checkDir = fs.statSync(sourceDir);</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >        fs.mkdirSync(newDirLocation, checkDir.mode);</span>
     } catch (e) {
         //if the directory already exists, that's okay
-<span class="cstat-no" title="statement not covered">        if (e.code !== 'EEXIST') <span class="cstat-no" title="statement not covered">throw e;</span></span>
+<span class="cstat-no" title="statement not covered" >        if (e.code !== 'EEXIST') <span class="cstat-no" title="statement not covered" >throw e;</span></span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    var files = fs.readdirSync(sourceDir);</span>
-<span class="cstat-no" title="statement not covered">    var hasFilter = opts.filter || opts.include || opts.exclude;</span>
-<span class="cstat-no" title="statement not covered">    var preserveFiles = opts.preserveFiles === true;</span>
-<span class="cstat-no" title="statement not covered">    var preserveTimestamps = opts.preserveTimestamps === true;</span>
+<span class="cstat-no" title="statement not covered" >    var files = fs.readdirSync(sourceDir);</span>
+<span class="cstat-no" title="statement not covered" >    var hasFilter = opts.filter || opts.include || opts.exclude;</span>
+<span class="cstat-no" title="statement not covered" >    var preserveFiles = opts.preserveFiles === true;</span>
+<span class="cstat-no" title="statement not covered" >    var preserveTimestamps = opts.preserveTimestamps === true;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    for(var i = 0; i &lt; files.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >    for(var i = 0; i &lt; files.length; i++) {</span>
         // ignores all files or directories which match the RegExp in opts.filter
-<span class="cstat-no" title="statement not covered">        if(typeof opts !== 'undefined') {</span>
-<span class="cstat-no" title="statement not covered">            if (hasFilter) {</span>
-<span class="cstat-no" title="statement not covered">                if (!isFileIncluded(opts, sourceDir, files[i])) {</span>
-<span class="cstat-no" title="statement not covered">                    continue;</span>
+<span class="cstat-no" title="statement not covered" >        if(typeof opts !== 'undefined') {</span>
+<span class="cstat-no" title="statement not covered" >            if (hasFilter) {</span>
+<span class="cstat-no" title="statement not covered" >                if (!isFileIncluded(opts, sourceDir, files[i])) {</span>
+<span class="cstat-no" title="statement not covered" >                    continue;</span>
                 }
             }
             
-<span class="cstat-no" title="statement not covered">            if (opts.excludeHiddenUnix &amp;&amp; /^\./.test(files[i])) <span class="cstat-no" title="statement not covered">continue;</span></span>
+<span class="cstat-no" title="statement not covered" >            if (opts.excludeHiddenUnix &amp;&amp; /^\./.test(files[i])) <span class="cstat-no" title="statement not covered" >continue;</span></span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        var currFile = fs.lstatSync(_path.join(sourceDir, files[i]));</span>
+<span class="cstat-no" title="statement not covered" >        var currFile = fs.lstatSync(_path.join(sourceDir, files[i]));</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        var fCopyFile = <span class="fstat-no" title="function not covered">function(srcFile, destFile) {</span></span>
-<span class="cstat-no" title="statement not covered">            if(typeof opts !== 'undefined' &amp;&amp; opts.preserveFiles &amp;&amp; fs.existsSync(destFile)) <span class="cstat-no" title="statement not covered">return;</span></span>
+<span class="cstat-no" title="statement not covered" >        var fCopyFile = <span class="fstat-no" title="function not covered" >function(srcFile, destFile) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if(typeof opts !== 'undefined' &amp;&amp; opts.preserveFiles &amp;&amp; fs.existsSync(destFile)) <span class="cstat-no" title="statement not covered" >return;</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            var contents = fs.readFileSync(srcFile);</span>
-<span class="cstat-no" title="statement not covered">            fs.writeFileSync(destFile, contents);</span>
-<span class="cstat-no" title="statement not covered">            var stat =  fs.lstatSync(srcFile);</span>
-<span class="cstat-no" title="statement not covered">            fs.chmodSync(destFile, stat.mode);</span>
-<span class="cstat-no" title="statement not covered">            if (preserveTimestamps) {</span>
-<span class="cstat-no" title="statement not covered">                fs.utimesSync(destFile, stat.atime, stat.mtime)</span>
+<span class="cstat-no" title="statement not covered" >            var contents = fs.readFileSync(srcFile);</span>
+<span class="cstat-no" title="statement not covered" >            fs.writeFileSync(destFile, contents);</span>
+<span class="cstat-no" title="statement not covered" >            var stat =  fs.lstatSync(srcFile);</span>
+<span class="cstat-no" title="statement not covered" >            fs.chmodSync(destFile, stat.mode);</span>
+<span class="cstat-no" title="statement not covered" >            if (preserveTimestamps) {</span>
+<span class="cstat-no" title="statement not covered" >                fs.utimesSync(destFile, stat.atime, stat.mtime)</span>
             }
         };
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if(currFile.isDirectory()) {</span>
+<span class="cstat-no" title="statement not covered" >        if(currFile.isDirectory()) {</span>
             /*  recursion this thing right on back. */
-<span class="cstat-no" title="statement not covered">            exports.copyDirSyncRecursive(_path.join(sourceDir, files[i]), _path.join(newDirLocation, files[i]), opts);</span>
-        } else <span class="cstat-no" title="statement not covered">if(currFile.isSymbolicLink()) {</span>
-<span class="cstat-no" title="statement not covered">            var symlinkFull = fs.readlinkSync(_path.join(sourceDir, files[i]));</span>
-<span class="cstat-no" title="statement not covered">            symlinkFull = _path.resolve(fs.realpathSync(sourceDir), symlinkFull);</span>
+<span class="cstat-no" title="statement not covered" >            exports.copyDirSyncRecursive(_path.join(sourceDir, files[i]), _path.join(newDirLocation, files[i]), opts);</span>
+        } else <span class="cstat-no" title="statement not covered" >if(currFile.isSymbolicLink()) {</span>
+<span class="cstat-no" title="statement not covered" >            var symlinkFull = fs.readlinkSync(_path.join(sourceDir, files[i]));</span>
+<span class="cstat-no" title="statement not covered" >            symlinkFull = _path.resolve(fs.realpathSync(sourceDir), symlinkFull);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            if (typeof opts !== 'undefined' &amp;&amp; !opts.inflateSymlinks) {</span>
-<span class="cstat-no" title="statement not covered">                fs.symlinkSync(symlinkFull, _path.join(newDirLocation, files[i]));</span>
-<span class="cstat-no" title="statement not covered">                continue;</span>
+<span class="cstat-no" title="statement not covered" >            if (typeof opts !== 'undefined' &amp;&amp; !opts.inflateSymlinks) {</span>
+<span class="cstat-no" title="statement not covered" >                fs.symlinkSync(symlinkFull, _path.join(newDirLocation, files[i]));</span>
+<span class="cstat-no" title="statement not covered" >                continue;</span>
             }
 &nbsp;
-<span class="cstat-no" title="statement not covered">            var tmpCurrFile = fs.lstatSync(symlinkFull);</span>
-<span class="cstat-no" title="statement not covered">            if (tmpCurrFile.isDirectory()) {</span>
-<span class="cstat-no" title="statement not covered">                exports.copyDirSyncRecursive(symlinkFull, _path.join(newDirLocation, files[i]), opts);</span>
+<span class="cstat-no" title="statement not covered" >            var tmpCurrFile = fs.lstatSync(symlinkFull);</span>
+<span class="cstat-no" title="statement not covered" >            if (tmpCurrFile.isDirectory()) {</span>
+<span class="cstat-no" title="statement not covered" >                exports.copyDirSyncRecursive(symlinkFull, _path.join(newDirLocation, files[i]), opts);</span>
             } else {
                 /*  At this point, we've hit a file actually worth copying... so copy it on over. */
-<span class="cstat-no" title="statement not covered">                fCopyFile(symlinkFull, _path.join(newDirLocation, files[i]));</span>
+<span class="cstat-no" title="statement not covered" >                fCopyFile(symlinkFull, _path.join(newDirLocation, files[i]));</span>
             }
         } else {
             /*  At this point, we've hit a file actually worth copying... so copy it on over. */
-<span class="cstat-no" title="statement not covered">            fCopyFile(_path.join(sourceDir, files[i]), _path.join(newDirLocation, files[i]));</span>
+<span class="cstat-no" title="statement not covered" >            fCopyFile(_path.join(sourceDir, files[i]), _path.join(newDirLocation, files[i]));</span>
         }
     }
 };
@@ -1591,23 +1593,23 @@ exports.copyDirSyncRecursive = <span class="fstat-no" title="function not covere
  *
  *  Note: Directories should be passed to this function without a trailing slash.
  */
-exports.chmodSyncRecursive = <span class="fstat-no" title="function not covered">function(sourceDir, filemode) {</span>
-<span class="cstat-no" title="statement not covered">    var files = fs.readdirSync(sourceDir);</span>
+exports.chmodSyncRecursive = <span class="fstat-no" title="function not covered" >function(sourceDir, filemode) {</span>
+<span class="cstat-no" title="statement not covered" >    var files = fs.readdirSync(sourceDir);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    for(var i = 0; i &lt; files.length; i++) {</span>
-<span class="cstat-no" title="statement not covered">        var currFile = fs.lstatSync(_path.join(sourceDir, files[i]));</span>
+<span class="cstat-no" title="statement not covered" >    for(var i = 0; i &lt; files.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >        var currFile = fs.lstatSync(_path.join(sourceDir, files[i]));</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if(currFile.isDirectory()) {</span>
+<span class="cstat-no" title="statement not covered" >        if(currFile.isDirectory()) {</span>
             /*  ...and recursion this thing right on back. */
-<span class="cstat-no" title="statement not covered">            exports.chmodSyncRecursive(_path.join(sourceDir, files[i]), filemode);</span>
+<span class="cstat-no" title="statement not covered" >            exports.chmodSyncRecursive(_path.join(sourceDir, files[i]), filemode);</span>
         } else {
             /*  At this point, we've hit a file actually worth copying... so copy it on over. */
-<span class="cstat-no" title="statement not covered">            fs.chmod(_path.join(sourceDir, files[i]), filemode);</span>
+<span class="cstat-no" title="statement not covered" >            fs.chmod(_path.join(sourceDir, files[i]), filemode);</span>
         }
     }
 &nbsp;
     /*  Finally, chmod the parent directory */
-<span class="cstat-no" title="statement not covered">    fs.chmod(sourceDir, filemode);</span>
+<span class="cstat-no" title="statement not covered" >    fs.chmod(sourceDir, filemode);</span>
 };
 &nbsp;
 &nbsp;
@@ -1618,23 +1620,23 @@ exports.chmodSyncRecursive = <span class="fstat-no" title="function not covered"
  *
  *  Note: Directories should be passed to this function without a trailing slash.
  */
-exports.chownSyncRecursive = <span class="fstat-no" title="function not covered">function(sourceDir, uid, gid) {</span>
-<span class="cstat-no" title="statement not covered">    var files = fs.readdirSync(sourceDir);</span>
+exports.chownSyncRecursive = <span class="fstat-no" title="function not covered" >function(sourceDir, uid, gid) {</span>
+<span class="cstat-no" title="statement not covered" >    var files = fs.readdirSync(sourceDir);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    for(var i = 0; i &lt; files.length; i++) {</span>
-<span class="cstat-no" title="statement not covered">        var currFile = fs.lstatSync(_path.join(sourceDir, files[i]));</span>
+<span class="cstat-no" title="statement not covered" >    for(var i = 0; i &lt; files.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >        var currFile = fs.lstatSync(_path.join(sourceDir, files[i]));</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if(currFile.isDirectory()) {</span>
+<span class="cstat-no" title="statement not covered" >        if(currFile.isDirectory()) {</span>
             /*  ...and recursion this thing right on back. */
-<span class="cstat-no" title="statement not covered">            exports.chownSyncRecursive(_path.join(sourceDir, files[i]), uid, gid);</span>
+<span class="cstat-no" title="statement not covered" >            exports.chownSyncRecursive(_path.join(sourceDir, files[i]), uid, gid);</span>
         } else {
             /*  At this point, we've hit a file actually worth chowning... so own it. */
-<span class="cstat-no" title="statement not covered">            fs.chownSync(_path.join(sourceDir, files[i]), uid, gid);</span>
+<span class="cstat-no" title="statement not covered" >            fs.chownSync(_path.join(sourceDir, files[i]), uid, gid);</span>
         }
     }
 &nbsp;
     /*  Finally, chown the parent directory */
-<span class="cstat-no" title="statement not covered">    fs.chownSync(sourceDir, uid, gid);</span>
+<span class="cstat-no" title="statement not covered" >    fs.chownSync(sourceDir, uid, gid);</span>
 };
 &nbsp;
 &nbsp;
@@ -1643,31 +1645,31 @@ exports.chownSyncRecursive = <span class="fstat-no" title="function not covered"
  *
  *  Recursively dives through directories and obliterates everything about it.
  */
-exports.rmdirRecursive = <span class="fstat-no" title="function not covered">function rmdirRecursive(dir, failSilent, clbk){</span>
-<span class="cstat-no" title="statement not covered">    if(clbk === null || typeof clbk == 'undefined')</span>
-<span class="cstat-no" title="statement not covered">        clbk = <span class="fstat-no" title="function not covered">function(err) {</span>};</span>
+exports.rmdirRecursive = <span class="fstat-no" title="function not covered" >function rmdirRecursive(dir, failSilent, clbk){</span>
+<span class="cstat-no" title="statement not covered" >    if(clbk === null || typeof clbk == 'undefined')</span>
+<span class="cstat-no" title="statement not covered" >        clbk = <span class="fstat-no" title="function not covered" >function(err) {</span>};</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    fs.readdir(dir, <span class="fstat-no" title="function not covered">function(err, files) {</span></span>
-<span class="cstat-no" title="statement not covered">        if(err &amp;&amp; typeof failSilent === 'boolean' &amp;&amp; !failSilent) </span>
-<span class="cstat-no" title="statement not covered">        return clbk(err);</span>
+<span class="cstat-no" title="statement not covered" >    fs.readdir(dir, <span class="fstat-no" title="function not covered" >function(err, files) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if(err &amp;&amp; typeof failSilent === 'boolean' &amp;&amp; !failSilent) </span>
+<span class="cstat-no" title="statement not covered" >        return clbk(err);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if(typeof failSilent === 'function')</span>
-<span class="cstat-no" title="statement not covered">            clbk = failSilent;</span>
+<span class="cstat-no" title="statement not covered" >        if(typeof failSilent === 'function')</span>
+<span class="cstat-no" title="statement not covered" >            clbk = failSilent;</span>
         
-<span class="cstat-no" title="statement not covered">        (<span class="fstat-no" title="function not covered">function rmFile(err){</span></span>
-<span class="cstat-no" title="statement not covered">            if (err) <span class="cstat-no" title="statement not covered">return clbk(err);</span></span>
+<span class="cstat-no" title="statement not covered" >        (<span class="fstat-no" title="function not covered" >function rmFile(err){</span></span>
+<span class="cstat-no" title="statement not covered" >            if (err) <span class="cstat-no" title="statement not covered" >return clbk(err);</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            var filename = files.shift();</span>
-<span class="cstat-no" title="statement not covered">            if (filename === null || typeof filename == 'undefined')</span>
-<span class="cstat-no" title="statement not covered">                return fs.rmdir(dir, clbk);</span>
+<span class="cstat-no" title="statement not covered" >            var filename = files.shift();</span>
+<span class="cstat-no" title="statement not covered" >            if (filename === null || typeof filename == 'undefined')</span>
+<span class="cstat-no" title="statement not covered" >                return fs.rmdir(dir, clbk);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            var file = dir+'/'+filename;</span>
-<span class="cstat-no" title="statement not covered">            fs.lstat(file, <span class="fstat-no" title="function not covered">function(err, stat){</span></span>
-<span class="cstat-no" title="statement not covered">                if (err) <span class="cstat-no" title="statement not covered">return clbk(err);</span></span>
-<span class="cstat-no" title="statement not covered">                if (stat.isDirectory())</span>
-<span class="cstat-no" title="statement not covered">                    rmdirRecursive(file, rmFile);</span>
+<span class="cstat-no" title="statement not covered" >            var file = dir+'/'+filename;</span>
+<span class="cstat-no" title="statement not covered" >            fs.lstat(file, <span class="fstat-no" title="function not covered" >function(err, stat){</span></span>
+<span class="cstat-no" title="statement not covered" >                if (err) <span class="cstat-no" title="statement not covered" >return clbk(err);</span></span>
+<span class="cstat-no" title="statement not covered" >                if (stat.isDirectory())</span>
+<span class="cstat-no" title="statement not covered" >                    rmdirRecursive(file, rmFile);</span>
                 else
-<span class="cstat-no" title="statement not covered">                    fs.unlink(file, rmFile);</span>
+<span class="cstat-no" title="statement not covered" >                    fs.unlink(file, rmFile);</span>
             });
         })();
     });
@@ -1680,53 +1682,53 @@ exports.rmdirRecursive = <span class="fstat-no" title="function not covered">fun
  *
  *  Note: Directories should be passed to this function without a trailing slash.
  */
-exports.copyDirRecursive = <span class="fstat-no" title="function not covered">function copyDirRecursive(srcDir, newDir, opts, clbk) {</span>
-<span class="cstat-no" title="statement not covered">    var originalArguments = Array.prototype.slice.apply(arguments);</span>
-<span class="cstat-no" title="statement not covered">    srcDir = _path.normalize(srcDir);</span>
-<span class="cstat-no" title="statement not covered">    newDir = _path.normalize(newDir);</span>
+exports.copyDirRecursive = <span class="fstat-no" title="function not covered" >function copyDirRecursive(srcDir, newDir, opts, clbk) {</span>
+<span class="cstat-no" title="statement not covered" >    var originalArguments = Array.prototype.slice.apply(arguments);</span>
+<span class="cstat-no" title="statement not covered" >    srcDir = _path.normalize(srcDir);</span>
+<span class="cstat-no" title="statement not covered" >    newDir = _path.normalize(newDir);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    fs.stat(newDir, <span class="fstat-no" title="function not covered">function(err, newDirStat) {</span></span>
-<span class="cstat-no" title="statement not covered">        if(!err) {</span>
-<span class="cstat-no" title="statement not covered">            if(typeof opts !== 'undefined' &amp;&amp; typeof opts !== 'function' &amp;&amp; opts.forceDelete)</span>
-<span class="cstat-no" title="statement not covered">                return exports.rmdirRecursive(newDir, <span class="fstat-no" title="function not covered">function(err) {</span></span>
-<span class="cstat-no" title="statement not covered">                    copyDirRecursive.apply(this, originalArguments);</span>
+<span class="cstat-no" title="statement not covered" >    fs.stat(newDir, <span class="fstat-no" title="function not covered" >function(err, newDirStat) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if(!err) {</span>
+<span class="cstat-no" title="statement not covered" >            if(typeof opts !== 'undefined' &amp;&amp; typeof opts !== 'function' &amp;&amp; opts.forceDelete)</span>
+<span class="cstat-no" title="statement not covered" >                return exports.rmdirRecursive(newDir, <span class="fstat-no" title="function not covered" >function(err) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    copyDirRecursive.apply(this, originalArguments);</span>
                 });
             else
-<span class="cstat-no" title="statement not covered">                return clbk(new Error('You are trying to delete a directory that already exists. Specify forceDelete in an options object to override this.'));</span>
+<span class="cstat-no" title="statement not covered" >                return clbk(new Error('You are trying to delete a directory that already exists. Specify forceDelete in an options object to override this.'));</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">	if(typeof opts === 'function')</span>
-<span class="cstat-no" title="statement not covered">		clbk = opts;</span>
+<span class="cstat-no" title="statement not covered" >	if(typeof opts === 'function')</span>
+<span class="cstat-no" title="statement not covered" >		clbk = opts;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        fs.stat(srcDir, <span class="fstat-no" title="function not covered">function(err, srcDirStat){</span></span>
-<span class="cstat-no" title="statement not covered">            if (err) <span class="cstat-no" title="statement not covered">return clbk(err);</span></span>
-<span class="cstat-no" title="statement not covered">            fs.mkdir(newDir, srcDirStat.mode, <span class="fstat-no" title="function not covered">function(err){</span></span>
-<span class="cstat-no" title="statement not covered">                if (err) <span class="cstat-no" title="statement not covered">return clbk(err);</span></span>
-<span class="cstat-no" title="statement not covered">                fs.readdir(srcDir, <span class="fstat-no" title="function not covered">function(err, files){</span></span>
-<span class="cstat-no" title="statement not covered">                    if (err) <span class="cstat-no" title="statement not covered">return clbk(err);</span></span>
-<span class="cstat-no" title="statement not covered">                    (<span class="fstat-no" title="function not covered">function copyFiles(err){</span></span>
-<span class="cstat-no" title="statement not covered">                        if (err) <span class="cstat-no" title="statement not covered">return clbk(err);</span></span>
+<span class="cstat-no" title="statement not covered" >        fs.stat(srcDir, <span class="fstat-no" title="function not covered" >function(err, srcDirStat){</span></span>
+<span class="cstat-no" title="statement not covered" >            if (err) <span class="cstat-no" title="statement not covered" >return clbk(err);</span></span>
+<span class="cstat-no" title="statement not covered" >            fs.mkdir(newDir, srcDirStat.mode, <span class="fstat-no" title="function not covered" >function(err){</span></span>
+<span class="cstat-no" title="statement not covered" >                if (err) <span class="cstat-no" title="statement not covered" >return clbk(err);</span></span>
+<span class="cstat-no" title="statement not covered" >                fs.readdir(srcDir, <span class="fstat-no" title="function not covered" >function(err, files){</span></span>
+<span class="cstat-no" title="statement not covered" >                    if (err) <span class="cstat-no" title="statement not covered" >return clbk(err);</span></span>
+<span class="cstat-no" title="statement not covered" >                    (<span class="fstat-no" title="function not covered" >function copyFiles(err){</span></span>
+<span class="cstat-no" title="statement not covered" >                        if (err) <span class="cstat-no" title="statement not covered" >return clbk(err);</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">                        var filename = files.shift();</span>
-<span class="cstat-no" title="statement not covered">                        if (filename === null || typeof filename == 'undefined')</span>
-<span class="cstat-no" title="statement not covered">                            return clbk(null);</span>
+<span class="cstat-no" title="statement not covered" >                        var filename = files.shift();</span>
+<span class="cstat-no" title="statement not covered" >                        if (filename === null || typeof filename == 'undefined')</span>
+<span class="cstat-no" title="statement not covered" >                            return clbk(null);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">                        var file = srcDir+'/'+filename,</span>
+<span class="cstat-no" title="statement not covered" >                        var file = srcDir+'/'+filename,</span>
                             newFile = newDir+'/'+filename;
 &nbsp;
-<span class="cstat-no" title="statement not covered">                        fs.stat(file, <span class="fstat-no" title="function not covered">function(err, fileStat){</span></span>
-<span class="cstat-no" title="statement not covered">                            if (err) <span class="cstat-no" title="statement not covered">return clbk(err);</span></span>
-<span class="cstat-no" title="statement not covered">                            if (fileStat.isDirectory())</span>
-<span class="cstat-no" title="statement not covered">                                copyDirRecursive(file, newFile, copyFiles, clbk);</span>
-                            else <span class="cstat-no" title="statement not covered">if (fileStat.isSymbolicLink())</span>
-<span class="cstat-no" title="statement not covered">                                fs.readlink(file, <span class="fstat-no" title="function not covered">function(err, link){</span></span>
-<span class="cstat-no" title="statement not covered">                                    if (err) <span class="cstat-no" title="statement not covered">return clbk(err);</span></span>
-<span class="cstat-no" title="statement not covered">                                    fs.symlink(link, newFile, copyFiles);</span>
+<span class="cstat-no" title="statement not covered" >                        fs.stat(file, <span class="fstat-no" title="function not covered" >function(err, fileStat){</span></span>
+<span class="cstat-no" title="statement not covered" >                            if (err) <span class="cstat-no" title="statement not covered" >return clbk(err);</span></span>
+<span class="cstat-no" title="statement not covered" >                            if (fileStat.isDirectory())</span>
+<span class="cstat-no" title="statement not covered" >                                copyDirRecursive(file, newFile, copyFiles, clbk);</span>
+                            else <span class="cstat-no" title="statement not covered" >if (fileStat.isSymbolicLink())</span>
+<span class="cstat-no" title="statement not covered" >                                fs.readlink(file, <span class="fstat-no" title="function not covered" >function(err, link){</span></span>
+<span class="cstat-no" title="statement not covered" >                                    if (err) <span class="cstat-no" title="statement not covered" >return clbk(err);</span></span>
+<span class="cstat-no" title="statement not covered" >                                    fs.symlink(link, newFile, copyFiles);</span>
                                 });
                             else
-<span class="cstat-no" title="statement not covered">                                fs.readFile(file, <span class="fstat-no" title="function not covered">function(err, data){</span></span>
-<span class="cstat-no" title="statement not covered">                                    if (err) <span class="cstat-no" title="statement not covered">return clbk(err);</span></span>
-<span class="cstat-no" title="statement not covered">                                    fs.writeFile(newFile, data, copyFiles);</span>
+<span class="cstat-no" title="statement not covered" >                                fs.readFile(file, <span class="fstat-no" title="function not covered" >function(err, data){</span></span>
+<span class="cstat-no" title="statement not covered" >                                    if (err) <span class="cstat-no" title="statement not covered" >return clbk(err);</span></span>
+<span class="cstat-no" title="statement not covered" >                                    fs.writeFile(newFile, data, copyFiles);</span>
                                 });
                         });
                     })();
@@ -1736,84 +1738,83 @@ exports.copyDirRecursive = <span class="fstat-no" title="function not covered">f
     });
 };
 &nbsp;
-var mkdirSyncRecursive = <span class="fstat-no" title="function not covered">function(path, mode) {</span>
-<span class="cstat-no" title="statement not covered">    var self = this;</span>
-<span class="cstat-no" title="statement not covered">    path = _path.normalize(path)</span>
+var mkdirSyncRecursive = <span class="fstat-no" title="function not covered" >function(path, mode) {</span>
+<span class="cstat-no" title="statement not covered" >    var self = this;</span>
+<span class="cstat-no" title="statement not covered" >    path = _path.normalize(path)</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    try {</span>
-<span class="cstat-no" title="statement not covered">        fs.mkdirSync(path, mode);</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >        fs.mkdirSync(path, mode);</span>
     } catch(err) {
-<span class="cstat-no" title="statement not covered">        if(err.code == "ENOENT") {</span>
-<span class="cstat-no" title="statement not covered">            var slashIdx = path.lastIndexOf(_path.sep);</span>
+<span class="cstat-no" title="statement not covered" >        if(err.code == "ENOENT") {</span>
+<span class="cstat-no" title="statement not covered" >            var slashIdx = path.lastIndexOf(_path.sep);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">            if(slashIdx &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered">                var parentPath = path.substring(0, slashIdx);</span>
-<span class="cstat-no" title="statement not covered">                mkdirSyncRecursive(parentPath, mode);</span>
-<span class="cstat-no" title="statement not covered">                mkdirSyncRecursive(path, mode);</span>
+<span class="cstat-no" title="statement not covered" >            if(slashIdx &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                var parentPath = path.substring(0, slashIdx);</span>
+<span class="cstat-no" title="statement not covered" >                mkdirSyncRecursive(parentPath, mode);</span>
+<span class="cstat-no" title="statement not covered" >                mkdirSyncRecursive(path, mode);</span>
             } else {
-<span class="cstat-no" title="statement not covered">                throw err;</span>
+<span class="cstat-no" title="statement not covered" >                throw err;</span>
             }
-        } else <span class="cstat-no" title="statement not covered">if(err.code == "EEXIST") {</span>
-<span class="cstat-no" title="statement not covered">            return;</span>
+        } else <span class="cstat-no" title="statement not covered" >if(err.code == "EEXIST") {</span>
+<span class="cstat-no" title="statement not covered" >            return;</span>
         } else {
-<span class="cstat-no" title="statement not covered">            throw err;</span>
+<span class="cstat-no" title="statement not covered" >            throw err;</span>
         }
     }
 };
 exports.mkdirSyncRecursive = mkdirSyncRecursive;
 &nbsp;
-exports.LineReader = <span class="fstat-no" title="function not covered">function(filename, bufferSize) {</span>
-<span class="cstat-no" title="statement not covered">    this.bufferSize = bufferSize || 8192;</span>
-<span class="cstat-no" title="statement not covered">    this.buffer = "";</span>
-<span class="cstat-no" title="statement not covered">    this.fd = fs.openSync(filename, "r");</span>
-<span class="cstat-no" title="statement not covered">    this.currentPosition = 0;</span>
+exports.LineReader = <span class="fstat-no" title="function not covered" >function(filename, bufferSize) {</span>
+<span class="cstat-no" title="statement not covered" >    this.bufferSize = bufferSize || 8192;</span>
+<span class="cstat-no" title="statement not covered" >    this.buffer = "";</span>
+<span class="cstat-no" title="statement not covered" >    this.fd = fs.openSync(filename, "r");</span>
+<span class="cstat-no" title="statement not covered" >    this.currentPosition = 0;</span>
 };
 &nbsp;
 exports.LineReader.prototype = {
-    close: <span class="fstat-no" title="function not covered">function() {</span>
-<span class="cstat-no" title="statement not covered">        return fs.closeSync(this.fd);</span>
+    close: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >        return fs.closeSync(this.fd);</span>
     },
 &nbsp;
-    getBufferAndSetCurrentPosition: <span class="fstat-no" title="function not covered">function(position) {</span>
-<span class="cstat-no" title="statement not covered">        var res = fs.readSync(this.fd, this.bufferSize, position, "ascii");</span>
+    getBufferAndSetCurrentPosition: <span class="fstat-no" title="function not covered" >function(position) {</span>
+<span class="cstat-no" title="statement not covered" >        var res = fs.readSync(this.fd, this.bufferSize, position, "ascii");</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        this.buffer += res[0];</span>
-<span class="cstat-no" title="statement not covered">        if(res[1] === 0) {</span>
-<span class="cstat-no" title="statement not covered">            this.currentPosition = -1;</span>
+<span class="cstat-no" title="statement not covered" >        this.buffer += res[0];</span>
+<span class="cstat-no" title="statement not covered" >        if(res[1] === 0) {</span>
+<span class="cstat-no" title="statement not covered" >            this.currentPosition = -1;</span>
         } else {
-<span class="cstat-no" title="statement not covered">            this.currentPosition = position + res[1];</span>
+<span class="cstat-no" title="statement not covered" >            this.currentPosition = position + res[1];</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        return this.currentPosition;</span>
+<span class="cstat-no" title="statement not covered" >        return this.currentPosition;</span>
     },
 &nbsp;
-    hasNextLine: <span class="fstat-no" title="function not covered">function() {</span>
-<span class="cstat-no" title="statement not covered">        while(this.buffer.indexOf('\n') === -1) {</span>
-<span class="cstat-no" title="statement not covered">            this.getBufferAndSetCurrentPosition(this.currentPosition);</span>
-<span class="cstat-no" title="statement not covered">            if(this.currentPosition === -1) <span class="cstat-no" title="statement not covered">return false;</span></span>
+    hasNextLine: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >        while(this.buffer.indexOf('\n') === -1) {</span>
+<span class="cstat-no" title="statement not covered" >            this.getBufferAndSetCurrentPosition(this.currentPosition);</span>
+<span class="cstat-no" title="statement not covered" >            if(this.currentPosition === -1) <span class="cstat-no" title="statement not covered" >return false;</span></span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        if(this.buffer.indexOf("\n") &gt; -1 || this.buffer.length !== 0) <span class="cstat-no" title="statement not covered">return true;</span></span>
-<span class="cstat-no" title="statement not covered">        return false;</span>
+<span class="cstat-no" title="statement not covered" >        if(this.buffer.indexOf("\n") &gt; -1 || this.buffer.length !== 0) <span class="cstat-no" title="statement not covered" >return true;</span></span>
+<span class="cstat-no" title="statement not covered" >        return false;</span>
     },
 &nbsp;
-    getNextLine: <span class="fstat-no" title="function not covered">function() {</span>
-<span class="cstat-no" title="statement not covered">        var lineEnd = this.buffer.indexOf("\n"),</span>
+    getNextLine: <span class="fstat-no" title="function not covered" >function() {</span>
+<span class="cstat-no" title="statement not covered" >        var lineEnd = this.buffer.indexOf("\n"),</span>
             result = this.buffer.substring(0, lineEnd != -1 ? lineEnd : this.buffer.length);
 &nbsp;
-<span class="cstat-no" title="statement not covered">        this.buffer = this.buffer.substring(result.length + 1, this.buffer.length);</span>
-<span class="cstat-no" title="statement not covered">        return result;</span>
+<span class="cstat-no" title="statement not covered" >        this.buffer = this.buffer.substring(result.length + 1, this.buffer.length);</span>
+<span class="cstat-no" title="statement not covered" >        return result;</span>
     }
 };
 &nbsp;
 // vim: et ts=4 sw=4
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 17:17:45 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Wed Apr 19 2017 06:57:05 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
